@@ -6,10 +6,16 @@ using namespace std;
 
 int main() {
  
- int num {10};
- cout << "The value of num is: " << num << endl;
- cout << "sizeof of num is: " << sizeof num << endl;
- cout << "Address of num is: " << &num << endl;
+ int *p;
+int x = 5;
+ cout << "Value of p is : " << p << endl;
+ cout << "Address of p is: " << &p << endl;
+ p = &x;
+
+ cout << "value of p point to x is " << p << endl;
+ cout << "the value contained in x is " << *p << endl;
+
+ cout << "the address of x is: " << &x << endl;
 
 
 cout << endl;
