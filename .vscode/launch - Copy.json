@@ -18,23 +18,7 @@
     "windows": {
       "MIMode": "gdb",
       "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
-    },
-    "configurations": [
-
-       
-    {
-        "name": "(Windows) Launch",
-        "type": "cppvsdbg",
-        "request": "launch",
-        "program": "enter program name, for example ${workspaceFolder}/a.exe",
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "${fileDirname}",
-        "environment": [],
-        "console": "externalTerminal"
     }
-    ]
-}
+  }
   
-  
-
+  symbolLoadInfo
