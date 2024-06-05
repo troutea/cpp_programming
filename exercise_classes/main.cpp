@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-#include "exercise_classes/Dog.h"
+#include "Dog.h"
 
 
 using namespace std;
@@ -10,6 +10,9 @@ using namespace std;
 int main() {
 
      Dog dog;
+     dog.set_age(10);
+
+     cout << "the dogs age is " << dog.get_age() << endl;
 
 
 

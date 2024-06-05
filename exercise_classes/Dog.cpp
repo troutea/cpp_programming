@@ -1,6 +1,5 @@
-#include "Dog.h"
-
 #include <string>
+#include "Dog.h"
 
 using namespace std;
 
