@@ -1,16 +1,18 @@
 #include <iostream>
 
 
+
 int main()
 {
 
-int x {5};
-int y {5};
-std::cout << x << ' ' << y << '\n';
-std::cout << ++x << ' ' << --y << '\n';
-std::cout << x << ' ' << y << '\n';
-std::cout << x++ << ' ' << y-- << '\n';
-std::cout << x << ' ' << y << '\n';
+std::cout << "Enter a number: ";
+int value {};
+std::cin >> value;
+
+if ( value == 0 || value == 1)
+  std::cout << "You picked 0 or 1 \n";
+  else
+  std::cout << "You did not pick 0 or 1\n";
 
 return 0;
 
