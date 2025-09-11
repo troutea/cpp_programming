@@ -5,11 +5,18 @@
 
 class Dog {
 
+    
+
 private:
 std::string name;
 int age;
 
 public:
+
+Dog() {
+    name = "None";
+    age = 0;
+}
 
 std::string  get_name();
 int get_age(); 
