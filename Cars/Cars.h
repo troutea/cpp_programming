@@ -12,12 +12,9 @@ public:
     ~Cars();
 
     virtual void speed() = 0; 
-    // {
-    //     std::cout << "hello the speed" << '\n';
-    // }
+    
 
 private:
-
 std::string tyres;
 std::string engine_type;
 
