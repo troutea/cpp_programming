@@ -15,9 +15,9 @@ std::string VIN;
 
 public:
 Car();
-void start();
+virtual void start();
 void stop();
-
+int fanbelt;
 
 protected:
 
