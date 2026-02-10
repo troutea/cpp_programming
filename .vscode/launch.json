@@ -1,8 +1,8 @@
 {
-    "name": "C++ Launch",
+    "name": "g++.exe - Build and debug active file",
     "type": "cppdbg",
     "request": "launch",
-    "program": "${workspaceFolder}/a.out",
+    "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
     "stopAtEntry": false,
     "customLaunchSetupCommands": [
       { "text": "target-run", "description": "run target", "ignoreFailures": false }
@@ -23,19 +23,7 @@
 
 
        
-    {
-        "name": "(Windows) Launch",
-        "type": "cppvsdbg",
-        "request": "launch",
-        "program": "enter program name, for example ${workspaceFolder}/a.exe",
-        "externalConsole": true,
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "${fileDirname}",
-        "environment": [],
-        "console": "externalTerminal"
-         
-    }
+   
     ]
 }
   
