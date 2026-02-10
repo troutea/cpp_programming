@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Car.h"
 #include "Engine.h"
+#include "FanbeltType.h"
 
 /*
 This is the driver code 
@@ -13,22 +14,28 @@ int main() {
 
     std::cout << "Hello world" << std::endl;
 
-    Car car;
-    car.fanbelt = 2;
-    
-    //car.start();
 
-    Car* p;
-
+    //Create and engine object
     Engine engine;
 
-    p = &engine;
-    p->start();
-    
-    // Engine engine;
-    // engine.start();
+    //start the enging function
+    engine.start();
+    //set the horsepowe of the engine
+    engine.setHorsePower(50);
+    std::cout << engine.getHorsePower() << '\n';
+
+
+    // create an instance of fanbelt
+     FanbeltType fanbelttype;
+
+     //set the type of fan belt
+     fanbelttype.setFanbeltType("chain_belt");
+     std::cout << fanbelttype.getFanbeltType() << '\n';
+
 
 }
+
+
 
 
 
