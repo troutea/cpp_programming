@@ -2,18 +2,26 @@
 #define CAR_H
 
 #pragma once
+#include "Engine.h"
+#include "Battery.h"
 
 class Car
 {
 
 private:
-int year;
+std::string brand;
+Engine engine;   //Composition
+Battery battery;   //Composition
 
 public:
+   
     Car();
     ~Car();
 
-    void setYear(int y) {year = y;}
+    void setBrand(std::string b);
+    void setEngineType(std::string t);
+    void setBatteryKwh(int k);
+    void prepareForTrip();
 
 
 
