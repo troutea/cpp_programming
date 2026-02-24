@@ -10,7 +10,7 @@ class Car
 
 private:
 std::string brand;
-Engine engine;   //Composition
+//Engine engine;   //Composition
 Battery battery;   //Composition
 
 public:
@@ -19,7 +19,7 @@ public:
     ~Car();
 
     void setBrand(std::string b);
-    void setEngineType(std::string t);
+   // void setEngineType(std::string t);
     void setBatteryKwh(int k);
     void prepareForTrip();
 

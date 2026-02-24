@@ -9,7 +9,7 @@ class Engine
 {
 public:
 std::string type;
-void start();
+virtual void start() const = 0;
     Engine();
     ~Engine();
 
