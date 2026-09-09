@@ -1,33 +1,25 @@
 #include <iostream>
+#include <string>
 
 
-class Account {
 
-private:
-std::string name;
-double balance;
+class MyClass {
 
-public:
-      Account() {
-        std::cout << "Calling the default" << '\n';
-      }
-      Account(std::string name, double balance);
-      Account(std::string name);
-      Account(double balance);
+   private:
 
 
-protected:
+   public:
+         MyClass()
+         {
+            std::cout << "Calling the constructor" << '\n';
+         }
+
+   protected:
 
 
 };
 
-int main()
-{
+int main() [
 
-     Account account;
-
-    return 0;
-}
-   
-
-
+    MyClass myclass;
+]

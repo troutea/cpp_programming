@@ -5,12 +5,18 @@
 #include<string>
 #pragma once
 
+
+//Car is the bases class
 class Car {
 
 private:
 std::string licenseNumber;
 std::string VIN;
 std::string brand;
+std::string engineType;
+std::string fuelType;
+std::string batteryType;
+int year;
 
 
 
