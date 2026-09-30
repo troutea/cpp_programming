@@ -39,6 +39,19 @@ int main(int argc, char *argv[])
     selectButton->setStyleSheet("font-size:18px; color:white; background-color: gray");
     layout->addWidget(selectButton);
 
+    //File Name Label
+    QLabel *fileNameLabel = new QLabel("");
+    fileNameLabel->setAlignment(Qt::AlignCenter);
+    fileNameLabel->setStyleSheet("font-size: 20px; color: green");
+    layout->addWidget(fileNameLabel);
+
+    //Create Subtitles Button
+    QPushButton *createButton = new QPushButton("Create");
+    selectButton->setStyleSheet("font-size:18px; color:white; background-color: green");
+    createButton->hide();
+    layout->addWidget(createButton);
+
+
     mainWindow.show();
     app.exec();
 
