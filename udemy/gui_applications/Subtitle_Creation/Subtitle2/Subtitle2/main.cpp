@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPushButton>
+#include <QFileDialog>
 
 int main(int argc, char *argv[])
 {
@@ -51,6 +52,23 @@ int main(int argc, char *argv[])
     createButton->hide();
     layout->addWidget(createButton);
 
+    //Status Label
+    QLabel *statusLabel = new QLabel("");
+    statusLabel->setAlignment(Qt::AlignCenter);
+    statusLabel->setStyleSheet("font-size: 20px; color: green");
+    statusLabel->hide();
+    layout->addWidget(statusLabel);
+
+    QObject::connect(selectButton, &QPushButton::clicked,[&]() {
+    QString filePath = QFileDialog::getOpenFileName(&mainWindow, "Choose Video File","","Video Files (*.mp4 *.avi *.wav *.mkv)");
+
+        if(!filePath.isEmpty()) {
+        fileNameLabel->setText(filePath);
+            createButton->show();
+        statusLabel->show();
+        }
+
+    });
 
     mainWindow.show();
     app.exec();
