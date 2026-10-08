@@ -70,6 +70,15 @@ int main(int argc, char *argv[])
 
     });
 
+    //Create Button Action
+    QObject::connect(createButton, &QPushButton::clicked,[&]() {
+        QString videoFile = fileNameLabel->text();
+        QFileInfo fileInfo(videoFile);
+
+
+    });
+
+
     mainWindow.show();
     app.exec();
 
