@@ -6,6 +6,8 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QFileDialog>
+#include <QProcess>
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -59,6 +61,8 @@ int main(int argc, char *argv[])
     statusLabel->hide();
     layout->addWidget(statusLabel);
 
+
+    //Select Button Action
     QObject::connect(selectButton, &QPushButton::clicked,[&]() {
     QString filePath = QFileDialog::getOpenFileName(&mainWindow, "Choose Video File","","Video Files (*.mp4 *.avi *.wav *.mkv)");
 
@@ -75,9 +79,38 @@ int main(int argc, char *argv[])
         QString videoFile = fileNameLabel->text();
         QFileInfo fileInfo(videoFile);
 
+        QString subtitleFile = fileInfo.absoluteFilePath()+"/"+fileInfo.completeBaseName()+".srt";
 
-    });
+        QProcess process;
+   //C:\Python314\python.exe
+    //    "C:\Local\JavaPrograms_git\POTD\qtSubtitles\subtitles\subs.py"
 
+    //});
+
+    //API KEY for ASSEMBLYai
+    //0e16d792796b48d6bd13d13246962d5e
+
+    QString pythonScript = "C:/Local/JavaPrograms_git/POTD/qtSubtitles/subtitles/subs.py";
+    QString command = "C:\\Python314\\python.exe";
+
+    QStringList arguments;
+    arguments << pythonScript <<videoFile <<subtitleFile;
+    process.start(command,arguments);
+
+    if(!process.waitForFinished(-1)){
+        std::cout << "Error Completing process.. Try Again";
+    } else {
+        std::cout << "Script executed Successfully";
+    }
+    QFile file(subtitleFile);
+    if(file.exists()) {
+        statusLabel->setText("Created Successfully");
+       }
+       else {
+        statusLabel->setText("Problem Creating Subtitles");
+       }
+
+     });
 
     mainWindow.show();
     app.exec();
