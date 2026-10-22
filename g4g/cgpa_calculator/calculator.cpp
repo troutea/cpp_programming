@@ -1,41 +1,22 @@
-#include "calculator.h"
+#include "Calculator.h"
 
-calculator::calculator()
+Calculator::Calculator()
 {
 
 }
 
-calculator::~calculator()
+Calculator::~Calculator()
 {
 
 }
 
-std::string calculator::getCourse() const
-{
-    return course;
-}
-   
-int calculator::getGrade() const 
-{
-    return grade;
-}
 
-void calculator::setCourse(const std::string& newCourse)
-{
-    course = newCourse;
-}
-
-void calculator::setGrade(int newGrade)
-{
-    grade = newGrade;
-}
-
-int calculator::calculateTotalcredits()
+int Calculator::calculateTotalcredits()
 {
     // Add your calculation logic here
     return 0;
 }
-int calculator::totalGradepoints()
+int Calculator::totalGradepoints()
 {
     // Add your calculation logic here
     return 0;

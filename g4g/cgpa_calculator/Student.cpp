@@ -14,14 +14,47 @@ Student::~Student()
 
 
 //getter
-std::string Student::getName() const 
+std::string Student::getStudentName() const 
 {
-    return name;
+    return StudentName;
 }
 
 
 //Setter 
-void Student::setName(const std::string& newName) 
+void Student::setStudentName(const std::string& newName) 
 {
-      this->name = newName;
+      this->StudentName = newName;
+}
+
+std::string Student::getCourseName() const
+{
+    return course;
+}
+   
+int Student::getCourseGrade() const 
+{
+    return grade;
+}
+
+void Student::setCourseGrade(int newGrade)
+{
+    grade = newGrade;
+}
+
+void Student::setCourseName(const std::string& newCourse)
+{
+    course = newCourse;
+}
+
+
+
+void Student::setHowManyCourses(int newNumberOfCourses)
+{
+    numberOfCourses = newNumberOfCourses;
+}
+
+
+int Student::getHowManyCourses() const
+{
+    return numberOfCourses;
 }

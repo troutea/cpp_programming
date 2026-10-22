@@ -8,18 +8,32 @@ class Student
 {
 
     private:
-std::string name;
+std::string StudentName;
+std::string course;
+int grade;
+int numberOfCourses;
+
 
 
 public:
     Student(); 
     ~Student();
 
-    std::string getName() const;
+    std::string getStudentName() const;
 
-    void setName(const std::string& newName);
+    void setStudentName(const std::string& newName);
 
+    //getters
+    std::string getCourseName() const;
+    int getCourseGrade() const;
 
+    //setters
+    void setCourseName(const std::string& newCourse);
+    void setCourseGrade(int newGrade);
+
+    //getter and setter for how many courses
+    void setHowManyCourses(int numberOfCourses);
+    int getHowManyCourses() const;
 
 
 protected:

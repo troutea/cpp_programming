@@ -5,28 +5,20 @@
 
 #pragma once
 
-class calculator
+class Calculator
 {
 
  private:
-    std::string course;
-    int grade;
-
+   
 
 public:
-    calculator();
-    ~calculator();
+    Calculator();
+    ~Calculator();
 
     int calculateTotalcredits(); 
     int totalGradepoints();
 
-   //getters
-    std::string getCourse() const;
-    int getGrade() const;
-
-    //setters
-    void setCourse(const std::string& newCourse);
-    void setGrade(int newGrade);
+   
 
 };
 
