@@ -16,7 +16,8 @@ int numberOfCourses;
 
 
 public:
-    Student(); 
+    //Student();
+     Student(std::string studentName); 
     ~Student();
 
     std::string getStudentName() const;

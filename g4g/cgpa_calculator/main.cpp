@@ -16,7 +16,7 @@ for (const std::string &course : courses) {
     }
 
 
-Student student;
+Student student("alice");
 
 student.setStudentName("Alice");
 
@@ -47,3 +47,48 @@ std::cout << "The number of courses are " << student.getHowManyCourses() << std:
 
 return 0;
 }
+
+
+
+
+// #include <iostream>
+// #include <vector>
+// #include <string>
+// #include <map>
+// using namespace std;
+// class Student {
+// private:
+//     string name;
+//     // Maps course name -> grade (e.g., "maths" -> 85.5)
+//     map<string, double> courseGrades;
+// public:
+//     Student(string studentName) : name(studentName) {}
+//     // Setter: assigns a grade to a specific course
+//     void setCourseGrade(const string &courseName, double grade) {
+//         courseGrades[courseName] = grade;
+//     }
+//     // Display all courses and their grades
+//     void printReportCard() const {
+//         cout << "\n--- Report Card for " << name << " ---" << endl;
+//         for (const auto &pair : courseGrades) {
+//             cout << pair.first << ": " << pair.second << endl;
+//         }
+//     }
+// };
+// int main() {
+//     Student student("John");
+//     // Your vector of courses
+//     vector<string> courses {"maths", "english", "irish"};
+//     // --- Approach 1: Loop through the vector and prompt for grades ---
+//     for (const string &course : courses) {
+//         double grade;
+//         cout << "Enter grade for " << course << ": ";
+//         cin >> grade;
+        
+//         // Calling the setter with the current course and input grade
+//         student.setCourseGrade(course, grade);
+//     }
+//     // Display the results
+//     student.printReportCard();
+//     return 0;
+// }

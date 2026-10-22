@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Student.h"
 
-Student::Student()
+//Student::Student()
+//Constructor initialise list
+Student::Student(std::string studentName) : StudentName(studentName) 
 {
 std::cout << "Calling the Student Constructor" << std::endl;
 
