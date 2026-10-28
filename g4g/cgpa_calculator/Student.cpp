@@ -1,62 +1,50 @@
 #include <iostream>
 #include "Student.h"
 
-//Student::Student()
-//Constructor initialise list
 Student::Student(std::string studentName) : StudentName(studentName) 
 {
-std::cout << "Calling the Student Constructor" << std::endl;
-
+    std::cout << "Calling the Student Constructor" << std::endl;
 }
 
-Student::~Student()
-{
+Student::~Student() {}
 
-}
-
-
-//getter
 std::string Student::getStudentName() const 
 {
     return StudentName;
 }
 
-
-//Setter 
 void Student::setStudentName(const std::string& newName) 
 {
-      this->StudentName = newName;
+    this->StudentName = newName;
 }
 
-std::string Student::getCourseName() const
+// Assign the whole map
+void Student::setCourses(const std::map<std::string, int>& newCourses) 
 {
-    return course;
-}
-   
-int Student::getCourseGrade() const 
-{
-    return grade;
+    courses = newCourses;
 }
 
-void Student::setCourseGrade(int newGrade)
+// Return the map
+const std::map<std::string, int>& Student::getCourses() const 
 {
-    grade = newGrade;
+    return courses;
 }
 
-void Student::setCourseName(const std::string& newCourse)
+// Add an individual course and grade
+void Student::addCourse(const std::string& courseName, int grade) 
 {
-    course = newCourse;
+    courses[courseName] = grade;
 }
 
-
-
-void Student::setHowManyCourses(int newNumberOfCourses)
+// Calculate the average grade
+double Student::calculateAverage() const 
 {
-    numberOfCourses = newNumberOfCourses;
-}
-
-
-int Student::getHowManyCourses() const
-{
-    return numberOfCourses;
+    if (courses.empty()) {
+        return 0.0;
+    }
+    double total = 0;
+    for (const auto& entry : courses) {
+        total += entry.second;
+    }
+    return total / courses.size();
 }

@@ -1,44 +1,31 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-#include <string>
 
-#pragma once
+#include <string>
+#include <map>
 
 class Student
 {
-
-    private:
-std::string StudentName;
-std::string course;
-int grade;
-int numberOfCourses;
-
-
+private:
+    std::string StudentName;
+    std::map<std::string, int> courses; // course name -> mark
 
 public:
-    //Student();
-     Student(std::string studentName); 
+    Student(std::string studentName); 
     ~Student();
 
     std::string getStudentName() const;
-
     void setStudentName(const std::string& newName);
 
-    //getters
-    std::string getCourseName() const;
-    int getCourseGrade() const;
+    // Set or get the entire map of courses
+    void setCourses(const std::map<std::string, int>& newCourses);
+    const std::map<std::string, int>& getCourses() const;
 
-    //setters
-    void setCourseName(const std::string& newCourse);
-    void setCourseGrade(int newGrade);
+    // Helper: add a single course and mark
+    void addCourse(const std::string& courseName, int grade);
 
-    //getter and setter for how many courses
-    void setHowManyCourses(int numberOfCourses);
-    int getHowManyCourses() const;
-
-
-protected:
-
+    // Helper: calculate average mark for this student
+    double calculateAverage() const;
 };
 
-#endif    //STUDENT_H
+#endif // STUDENT_H
